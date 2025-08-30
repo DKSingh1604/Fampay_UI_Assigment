@@ -8,11 +8,11 @@ void main() async {
 
   try {
     await StorageService.init();
-    // Clear hidden cards on app restart (remind later cards should reappear)
+
     await StorageService.clearHiddenCards();
   } catch (e) {
     print('Error initializing storage: $e');
-    // Continue without storage - app will work but won't persist card states
+    throw Exception('Failed to initialize storage: $e');
   }
 
   runApp(const MyApp());
@@ -23,6 +23,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
   }
 }
