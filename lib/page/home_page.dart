@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:fampay_assignment/controller/card_controller.dart';
 import 'package:fampay_assignment/core/convert_hex.dart';
 import 'package:fampay_assignment/static/app_assets.dart';
@@ -46,10 +48,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-

@@ -1,5 +1,4 @@
 import 'package:fampay_assignment/model/api_response_model.dart';
-import 'package:fampay_assignment/model/card_model.dart';
 import 'package:fampay_assignment/static/network_url.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -31,12 +30,15 @@ class ApiController extends GetxController {
         Uri.parse(baseUrl),
       );
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 || response.statusCode == 201) {
         final List<dynamic> jsonData = json.decode(response.body);
+
         _apiData.value = apiDataFromJson(response.body);
+
         _error.value = '';
       } else {
-        _error.value = 'Failed to load data. Status code: ${response.statusCode}';
+        _error.value =
+            'Failed to load data. Status code: ${response.statusCode}';
         _apiData.clear();
       }
     } catch (e) {
