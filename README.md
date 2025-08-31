@@ -14,7 +14,11 @@ This app displays contextual cards from FamPay's API with these features:
 
 ## App Demo
 
-https://github.com/user-attachments/assets/c69224bc-eba3-4ea1-9303-096b0d74aeb0
+
+
+
+https://github.com/user-attachments/assets/73416a81-f99c-4ead-b89a-37d3dfecff07
+
 
 *Watch the app in action showing all card types, interactions, and features*
 
