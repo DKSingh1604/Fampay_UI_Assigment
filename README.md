@@ -14,9 +14,6 @@ This app displays contextual cards from FamPay's API with these features:
 
 ## App Demo
 
-
-
-
 https://github.com/user-attachments/assets/73416a81-f99c-4ead-b89a-37d3dfecff07
 
 
@@ -40,6 +37,12 @@ flutter run
 ```
 
 For APK: `flutter build apk --release`
+
+## Download APK
+
+Try the app -- Download the pre-built APK from the `appApk/` folder and install it directly on your Android device.
+
+📱 **Installation**: Enable "Install from unknown sources" in your device settings, then install the APK file.
 
 ## How It Works
 
