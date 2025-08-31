@@ -16,7 +16,7 @@ class FormattedTextWidget extends StatelessWidget {
     final text = formatted!.text;
     final entities = formatted!.entities;
 
-    final parts = text.split(RegExp(r'\{\}')); // Split text by the "{}" markers
+    final parts = text.split(RegExp(r'\{\}'));
     List<InlineSpan> spans = [];
 
     double firstFontSize =
@@ -36,7 +36,7 @@ class FormattedTextWidget extends StatelessWidget {
 
       if (i < entities.length) {
         final entity = entities[i];
-        // Add the entity text with its specific styles
+
         spans.add(
           TextSpan(
             text: entity.text,

@@ -10,11 +10,11 @@ class HC9Widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 16, right: 16),
+      margin: const EdgeInsets.only(left: 16, right: 16),
       height: group.height?.toDouble() ?? 195,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        physics: ScrollPhysics(),
+        physics: const ScrollPhysics(),
         itemCount: group.cards.length,
         itemBuilder: (context, index) {
           final card = group.cards[index];
@@ -25,7 +25,7 @@ class HC9Widget extends StatelessWidget {
               }
             },
             child: Container(
-              margin: EdgeInsets.only(right: 8),
+              margin: const EdgeInsets.only(right: 8),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 gradient: LinearGradient(

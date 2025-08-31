@@ -6,8 +6,6 @@ Widget buildCard(dynamic card, double? width) {
   return GestureDetector(
     onTap: () {
       if (card.url != null && card.url.isNotEmpty) {
-        // Get context from the current BuildContext
-        // Note: This needs to be called from a context where Navigator is available
         UrlHandler.launchURL(card.url);
       }
     },

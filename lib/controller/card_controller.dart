@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'dart:convert';
 import 'dart:io';
 import 'package:fampay_assignment/model/api_response_model.dart';
@@ -22,12 +24,13 @@ class ApiController extends GetxController {
     fetchApiData();
   }
 
+  //fetch response from api
   Future<void> fetchApiData() async {
     try {
       _isLoading.value = true;
       _error.value = '';
 
-      // Try primary API with timeout
+      // api call
       final response = await http.get(
         Uri.parse(baseUrl),
         headers: {
@@ -43,7 +46,7 @@ class ApiController extends GetxController {
 
       if (response.statusCode == 200 || response.statusCode == 201) {
         final List<dynamic> jsonData = json.decode(response.body);
-        print('API Response successful');
+        // print('API Response successful');
 
         _apiData.value = apiDataFromJson(response.body);
         _error.value = '';
@@ -74,10 +77,12 @@ class ApiController extends GetxController {
     }
   }
 
+  //demo if api not accessible
   Future<void> _loadFallbackData() async {
     try {
       print('Loading fallback mock data...');
 
+      //mock data
       final mockApiResponse = [
         {
           "id": 1,

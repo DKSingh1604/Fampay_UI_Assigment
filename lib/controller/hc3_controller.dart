@@ -23,7 +23,6 @@ class HC3 extends GetxController {
       dismissedCards.addAll(dismissed);
       update();
     } catch (e) {
-      // If there's an error loading from storage, start with empty sets
       hiddenCards.clear();
       dismissedCards.clear();
     }
@@ -42,11 +41,9 @@ class HC3 extends GetxController {
   }
 
   Future<void> remindLater(String cardId) async {
-    // Update UI immediately
     hiddenCards.add(cardId);
     update();
 
-    // Persist to storage
     try {
       await StorageService.hideCard(cardId);
     } catch (e) {
@@ -55,11 +52,9 @@ class HC3 extends GetxController {
   }
 
   Future<void> dismissNow(String cardId) async {
-    // Update UI immediately
     dismissedCards.add(cardId);
     update();
 
-    // Persist to storage
     try {
       await StorageService.dismissCard(cardId);
     } catch (e) {
@@ -75,7 +70,6 @@ class HC3 extends GetxController {
     update();
   }
 
-  // Legacy method for backward compatibility
   void hideCard(String cardId) {
     remindLater(cardId);
   }

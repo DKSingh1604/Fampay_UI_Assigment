@@ -24,12 +24,11 @@ class StorageService {
       return _prefs!;
     } catch (e) {
       print('Error initializing SharedPreferences: $e');
-      // Return a mock prefs that doesn't save anything but doesn't crash
       throw Exception('SharedPreferences not available: $e');
     }
   }
 
-  // Methods for hidden cards (remind later)
+  // Methods for removed cards
   static Future<void> hideCard(String cardId) async {
     try {
       final hiddenCards = await getHiddenCards();
@@ -63,7 +62,6 @@ class StorageService {
     }
   }
 
-  // Methods for dismissed cards (dismiss now)
   static Future<void> dismissCard(String cardId) async {
     try {
       final dismissedCards = await getDismissedCards();
@@ -88,27 +86,25 @@ class StorageService {
     await prefs.setStringList(_dismissedCardsKey, dismissedCards.toList());
   }
 
-  // Check if card should be visible
   static Future<bool> isCardVisible(String cardId) async {
     final hiddenCards = await getHiddenCards();
     final dismissedCards = await getDismissedCards();
     return !hiddenCards.contains(cardId) && !dismissedCards.contains(cardId);
   }
 
-  // Clear all hidden cards (for app restart - hidden cards should reappear)
+  // cards hide but come on app restart
   static Future<void> clearHiddenCards() async {
     final prefs = await prefsAsync;
     await prefs.remove(_hiddenCardsKey);
   }
 
-  // Clear all data (for testing purposes)
+  // Clear all data
   static Future<void> clearAllData() async {
     final prefs = await prefsAsync;
     await prefs.remove(_hiddenCardsKey);
     await prefs.remove(_dismissedCardsKey);
   }
 
-  // Synchronous methods for immediate access (fallback)
   static Set<String> getHiddenCardsSync() {
     if (_prefs == null) return <String>{};
     final hiddenCardsList = _prefs!.getStringList(_hiddenCardsKey) ?? [];

@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, deprecated_member_use
 
 import 'package:fampay_assignment/controller/card_controller.dart';
 import 'package:fampay_assignment/core/convert_hex.dart';
@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
             SvgPicture.asset(
               AppAssets.fampaylogo,
               width: 30,
-              height: 25,
+              height: 30,
             ),
             Obx(() {
               if (controller.error.isNotEmpty &&
@@ -36,11 +36,13 @@ class HomePage extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.orange.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.orange.withOpacity(0.3)),
+                    border: Border.all(
+                      color: Colors.orange.withOpacity(0.3),
+                    ),
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
-                    children: const [
+                    children: [
                       Icon(Icons.wifi_off, size: 12, color: Colors.orange),
                       SizedBox(width: 4),
                       Text(

@@ -15,7 +15,11 @@ class Formatted {
         text: json["text"] ?? '',
         align: json["align"] ?? 'left',
         entities: json["entities"] != null
-            ? List<Entity>.from(json["entities"].map((x) => Entity.fromJson(x)))
+            ? List<Entity>.from(
+                json["entities"].map(
+                  (x) => Entity.fromJson(x),
+                ),
+              )
             : [],
       );
 

@@ -1,4 +1,4 @@
-import 'dart:developer';
+// ignore_for_file: use_super_parameters
 
 import 'package:fampay_assignment/core/convert_hex.dart';
 import 'package:fampay_assignment/core/url_handler.dart';
@@ -13,14 +13,14 @@ class HC6Widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       width: double.infinity,
       height: group.height! + 25.toDouble(),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         physics: group.isScrollable
-            ? ScrollPhysics()
-            : NeverScrollableScrollPhysics(),
+            ? const ScrollPhysics()
+            : const NeverScrollableScrollPhysics(),
         itemCount: group.cards.length,
         itemBuilder: (context, index) {
           final card = group.cards[index];
@@ -60,7 +60,7 @@ class HC6Widget extends StatelessWidget {
                       card.icon!.imageUrl,
                       height: card.iconSize! + 9.toDouble(),
                     ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Expanded(
                     child: Text(
                       card.formattedTitle!.entities.first.text.toString(),
@@ -78,7 +78,7 @@ class HC6Widget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Icon(Icons.chevron_right),
+                  const Icon(Icons.chevron_right),
                 ],
               ),
             ),

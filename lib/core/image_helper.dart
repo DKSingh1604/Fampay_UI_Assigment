@@ -14,14 +14,13 @@ class ImageHelper {
     }
 
     if (image.imageType == 'asset' && image.assetType != null) {
-      // Handle asset images
+      // asset images
       return Image.asset(
         'assets/${image.assetType}',
         fit: fit,
         width: width,
         height: height,
         errorBuilder: (context, error, stackTrace) {
-          // Fallback to external URL if asset is not found
           return Image.network(
             image.imageUrl,
             fit: fit,
@@ -39,7 +38,7 @@ class ImageHelper {
         },
       );
     } else {
-      // Handle external images
+      // external images
       return Image.network(
         image.imageUrl,
         fit: fit,
@@ -66,7 +65,6 @@ class ImageHelper {
         image: AssetImage('assets/${image.assetType}'),
         fit: fit,
         onError: (error, stackTrace) {
-          // This will show a broken image but won't crash the app
           print('Asset image error: $error');
         },
       );
