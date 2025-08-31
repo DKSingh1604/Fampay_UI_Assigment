@@ -27,16 +27,6 @@ https://github.com/user-attachments/assets/73416a81-f99c-4ead-b89a-37d3dfecff07
 - **URL Launcher** for deep links
 - **Flutter SVG** for assets
 
-## Quick Start
-
-```bash
-git clone <repo-url>
-cd Fampay-Assignment-master
-flutter pub get
-flutter run
-```
-
-For APK: `flutter build apk --release`
 
 ## Download APK
 
