@@ -14,7 +14,10 @@ This app displays contextual cards from FamPay's API with these features:
 
 ## App Demo
 
-https://github.com/user-attachments/assets/appRecording.mp4
+<video width="300" controls>
+  <source src="assets/appRecording.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 *Watch the app in action showing all card types, interactions, and features*
 
