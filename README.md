@@ -12,6 +12,12 @@ This app displays contextual cards from FamPay's API with these features:
 - **Pull to Refresh**: Swipe down to reload data
 - **Persistent Memory**: Cards remember their hidden/dismissed state between app sessions
 
+## App Demo
+
+https://github.com/user-attachments/assets/appRecording.mp4
+
+*Watch the app in action showing all card types, interactions, and features*
+
 ## Tech Stack
 
 - **Flutter 3.5.4+** with GetX for state management
