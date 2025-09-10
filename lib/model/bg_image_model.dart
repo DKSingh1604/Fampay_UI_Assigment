@@ -1,6 +1,6 @@
 class BgImage {
   String imageType;
-  String? assetType;
+  String? assetType; //not needed as such, not in API reponse
   String imageUrl;
   double aspectRatio;
 

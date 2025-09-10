@@ -2,7 +2,9 @@ import 'package:fampay_assignment/core/storage_service.dart';
 import 'package:get/get.dart';
 
 class HC3 extends GetxController {
-  final RxSet<String> hiddenCards = <String>{}.obs;
+  //cards on next app initialization
+  final RxSet<String> hiddenCards = <String>{}.obs; // Rx- reactive
+  //cards never coming back
   final RxSet<String> dismissedCards = <String>{}.obs;
 
   @override

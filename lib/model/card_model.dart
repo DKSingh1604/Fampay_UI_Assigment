@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:fampay_assignment/model/bg_gradient_model.dart';
 import 'package:fampay_assignment/model/bg_image_model.dart';
 import 'package:fampay_assignment/model/cta_model.dart';
@@ -106,10 +105,3 @@ class Card {
         "formatted_description": formattedDescription?.toJson(),
       };
 }
-
-
-
-
-
-
-

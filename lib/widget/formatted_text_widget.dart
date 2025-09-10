@@ -11,7 +11,7 @@ class FormattedTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (formatted == null) return SizedBox.shrink();
+    if (formatted == null) return const SizedBox.shrink();
 
     final text = formatted!.text;
     final entities = formatted!.entities;
