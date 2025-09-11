@@ -2,8 +2,8 @@ class Cta {
   String text;
   String type;
   String bgColor;
-  String? textColor;
-  String? url;
+  String? textColor; //optional
+  String? url; //optional
   bool isCircular;
   bool isSecondary;
   int strokeWidth;

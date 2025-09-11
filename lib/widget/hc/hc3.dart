@@ -216,6 +216,7 @@ class _HC3WidgetState extends State<HC3Widget> {
                 if (cta.url != null && cta.url!.isNotEmpty) {
                   UrlHandler.handleDeepLink(cta.url, context);
                 }
+                //action button doesnt work bcoz it does have its own cta
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: hexToColor(
@@ -230,9 +231,10 @@ class _HC3WidgetState extends State<HC3Widget> {
               child: Text(
                 widget.group.cards.first.cta!.first.text,
                 style: TextStyle(
-                    color: hexToColor(
-                        widget.group.cards.first.cta!.first.textColor ??
-                            '#FFFFFF')),
+                  color: hexToColor(
+                      widget.group.cards.first.cta!.first.textColor ??
+                          '#FFFFFF'),
+                ),
               ),
             ),
         ],
